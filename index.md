@@ -21,7 +21,7 @@ this project will pave the way for one or more future PSRs.
 
 You can install this package through Composer:
 
-```json
+```cli
 composer require stream-interop/stream-interop
 ```
 
@@ -32,17 +32,11 @@ between minor versions.
 
 ### Available
 
-- [`Duplex`](src/Duplex.php) - Describes the contract of a *duplex* stream and the methods and properties it exposes.
+- [`Duplex`](https://github.com/stream-interop/stream-interop/blob/master/src/Duplex.php) - Describes the contract of a *duplex* stream and the methods and properties it exposes.
 [[Description](docs/Duplex.md)] [[Meta Document](docs/Duplex-meta.md).]
-- [`Lockable`](src/Duplex.php) - Describes the contract of a *lockable* stream and the methods and properties it exposes.
-[[Description](docs/Duplex.md)] [[Meta Document](docs/Duplex-meta.md).]
-- [`Readable`](src/Readable.php) - Describes the contract of a *readable* stream and the methods and properties it exposes.
+- [`Readable`](https://github.com/stream-interop/stream-interop/blob/master/src/Duplex.php) - Describes the contract of a *readable* stream and the methods and properties it exposes.
 [[Description](docs/Readable.md)] [[Meta Document](docs/Readable-meta.md).]
-- [`Seekable`](src/Seekable.php) - Describes the contract of a *seekable* stream and the methods and properties it exposes.
-[[Description](docs/Seekable.md)] [[Meta Document](docs/Seekable-meta.md).]
-- [`Transform`](src/Transform.php) - Describes the contract of a *transform* stream and the methods and properties it exposes.
-[[Description](docs/Transform.md)] [[Meta Document](docs/Transform-meta.md).]
-- [`Writable`](src/Writable.php) - Describes the contract of a *writable* stream and the methods and properties it exposes.
+- [`Writable`](https://github.com/stream-interop/stream-interop/blob/master/src/Duplex.php) - Describes the contract of a *writable* stream and the methods and properties it exposes.
 [[Description](docs/Writable.md)] [[Meta Document](docs/Writable-meta.md).]
 
 ### Proposed
