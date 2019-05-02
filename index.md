@@ -1,37 +1,74 @@
-## Welcome to GitHub Pages
+# Stream Interoperability
 
-You can use the [editor on GitHub](https://github.com/stream-interop/stream-interop.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+## About
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+*stream-interop* tries to identify and standardize features used by resource streams (readable,
+writable, duplex, buffered etc.) to achieve interoperability within the PHP community.
 
-### Markdown
+Through discussions and trials, we will attempt to create a standard, made of common interfaces but also recommendations.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+If PHP projects that provide stream implementations begin to adopt these common standards, then PHP
+applications and projects that use streams can depend on the common interfaces instead of specific
+implementations. This facilitates a high-level of interoperability and flexibility that allows users to consume
+*any* stream implementation that can be adapted to these interfaces.
 
-```markdown
-Syntax highlighted code block
+The work done in this project is not officially endorsed by the [PHP-FIG](http://www.php-fig.org/), but it is being
+worked on by members of PHP-FIG and other good developers. We adhere to the spirit and ideals of PHP-FIG, and hope
+this project will pave the way for one or more future PSRs.
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
+## Installation
 
-1. Numbered
-2. List
+You can install this package through Composer:
 
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```json
+composer require stream-interop/stream-interop
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+The packages adheres to the [SemVer](http://semver.org/) specification, and there will be full backward compatibility
+between minor versions.
 
-### Jekyll Themes
+## Standards
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/stream-interop/stream-interop.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+### Available
 
-### Support or Contact
+- [`Duplex`](src/Duplex.php) - Describes the contract of a *duplex* stream and the methods and properties it exposes.
+[[Description](docs/Duplex.md)] [[Meta Document](docs/Duplex-meta.md).]
+- [`Lockable`](src/Duplex.php) - Describes the contract of a *lockable* stream and the methods and properties it exposes.
+[[Description](docs/Duplex.md)] [[Meta Document](docs/Duplex-meta.md).]
+- [`Readable`](src/Readable.php) - Describes the contract of a *readable* stream and the methods and properties it exposes.
+[[Description](docs/Readable.md)] [[Meta Document](docs/Readable-meta.md).]
+- [`Seekable`](src/Seekable.php) - Describes the contract of a *seekable* stream and the methods and properties it exposes.
+[[Description](docs/Seekable.md)] [[Meta Document](docs/Seekable-meta.md).]
+- [`Transform`](src/Transform.php) - Describes the contract of a *transform* stream and the methods and properties it exposes.
+[[Description](docs/Transform.md)] [[Meta Document](docs/Transform-meta.md).]
+- [`Writable`](src/Writable.php) - Describes the contract of a *writable* stream and the methods and properties it exposes.
+[[Description](docs/Writable.md)] [[Meta Document](docs/Writable-meta.md).]
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+### Proposed
+
+View open [request for comments](https://github.com/stream-interop/stream-interop/labels/RFC) or view the [project board](https://github.com/orgs/stream-interop/projects/1).
+
+## Compatible projects
+
+### Projects implementing `stream-interop`
+
+### Projects using `stream-interop`
+
+## Workflow
+
+Everyone is welcome to join and contribute.
+
+The general workflow looks like this:
+
+1. Someone opens a discussion (GitHub issue) to suggest an interface
+2. Feedback is gathered
+3. The interface is added to a development branch
+4. We release alpha versions so that the interface can be experimented with
+5. Discussions and edits ensue until the interface is deemed stable by a general consensus
+6. A new minor version of the package is released
+
+We try to not break BC by creating new interfaces instead of editing existing ones.
+
+While we currently work on interfaces, we are open to anything that might help towards interoperability, may that
+be code, best practices, etc.
